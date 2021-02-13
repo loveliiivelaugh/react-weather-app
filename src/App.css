@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  padding: 50px;
+  height: 100vh;
+  width: 100%;
+  color: linear-gradient(to right, #61dafb, rgb(197, 241, 241));
+  color: #fff;
+  background-color: #0ea4ce;
+  /* background-color: rgba(255, 255, 255, 0.0); */
+}
+
+#background-video{
+  height: auto;
+  width: 100%;
+  /* float: left; */
+  top: 0;
+  padding: none;
+  position: fixed; /* optional depending on what you want to do in your app */  
+  z-index: -1;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  color: #047797;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #047797;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+form {
+  width: auto;
+}
+
+form input {
+  min-width: 100px;
+  height: 24px;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+
+.form-container {
+  border: rgba(255, 255, 255, 0.2) 1px solid;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 3px 2px 1px rgba(0,0,0,0.2);
+  backdrop-filter: blur 24px;
+  width: 400px;
+  max-width: 600px;
+  padding: 25px;
+}
+
+form-row {
+  text-align: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 50px, 100px, 50px, 100px;
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  color:#fff;
+  color: linear-gradient(to right, #61dafb, rgb(197, 241, 241));
+  background-color: rgba(0,0,0,0);
+  box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.2);
+  border-color: #fff 4px solid;
+  border-radius: 25px;
+  margin: 0 10px 0 10px;
+}
+
+.btn:hover {
+  color: #61fb82;
+  border-color: rgba(0,0,0,0.4) 1px solid;
+  box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.4);
+  border-radius: 25px;
+}
+
+#city {
+  padding: 5px 0 5px 10px;
+}
+
+/* .container {
+  text-align: center;
+} */
+
+.main {
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  padding: 20px 0 20px 0
+}
+
+.cards {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur 8px;
+  border: rgba(255, 255, 255, 0.2) 1px solid;
+  border-radius: 5px;
+  box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.3);
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.cards:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  /* transition: 3s ease; */
+}
