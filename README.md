@@ -1,3 +1,8 @@
+# Open Weather React App
+
+Visit live: https://adoring-mcclintock-6017c8.netlify.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
