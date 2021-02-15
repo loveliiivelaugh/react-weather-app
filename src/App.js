@@ -43,7 +43,7 @@ function App() {
   // todo -->move these keys to a private .env file<--
   //private keys, Constant Variables
   const URL = "https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus";
-  const KEY = "ac72153c36mshd1814c8f1af20f3p1518fbjsnabee85184908";
+  const KEY = "RegisterAtRapidAPIToGetFastAccessToAPIS";
   const HOST = "community-open-weather-map.p.rapidapi.com";
   //arrange the variables appropriately
   const headers = { key: KEY, host: HOST }; //arrange headers payload
@@ -68,7 +68,7 @@ function App() {
     fetch("https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "ac72153c36mshd1814c8f1af20f3p1518fbjsnabee85184908",
+        "x-rapidapi-key": "RegisterAtRapidAPIToGetFastAccessToAPIS",
         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
       }
     })
