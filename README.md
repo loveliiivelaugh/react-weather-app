@@ -3,6 +3,13 @@
 Visit live: https://adoring-mcclintock-6017c8.netlify.app/
 
 
+## To do list
+
+1. Convert dates to days of the week.
+2. Move API keys to .env file
+3. Add arrow icon in direction that correlates with wind direction
+4. Update styling
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
