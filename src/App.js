@@ -43,8 +43,8 @@ function App() {
   // todo -->move these keys to a private .env file<--
   //private keys, Constant Variables
   const URL = "https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus";
-  const KEY = "ac72153c36mshd1814c8f1af20f3p1518fbjsnabee85184908";
-  const HOST = "community-open-weather-map.p.rapidapi.com";
+  const KEY = process.env.REACT_APP_KEY;
+  const HOST = process.env.REACT_APP_HOST;
   //arrange the variables appropriately
   const headers = { key: KEY, host: HOST }; //arrange headers payload
   const response = useFetch({ url: URL, headers: headers }); //useFetch hook to handle onPageLoad
@@ -65,11 +65,11 @@ function App() {
   function getForecast(e) {
     e.preventDefault();
     const fiveDayForecast = [];
-    fetch("https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus", {
+    fetch(URL, {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "ac72153c36mshd1814c8f1af20f3p1518fbjsnabee85184908",
-        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
+        "x-rapidapi-key": KEY,
+        "x-rapidapi-host": HOST
       }
     })
     .then(response => response.json())
