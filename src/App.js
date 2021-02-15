@@ -65,27 +65,36 @@ function App() {
   function getForecast(e) {
     e.preventDefault();
     const fiveDayForecast = [];
-    fetch(URL, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": KEY,
-        "x-rapidapi-host": HOST
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      // to format the data structure to be strictly a 5-day forecast, we'll use this "for loop" to divide the 40 "3-hour" record lines by 8. Which will return just 5 days worth of data then.
-      for (let i = 0; i < 40; i += 8) {
-        // We'll then need to append this newly formated data structure to an empty array variable to then later set in state.
-        if (data) {
-          fiveDayForecast.push(data.list[i]);
+    if (
+      city.split(" ").length > 2 ||
+      city === ""
+    ) {
+      setCity("");
+      alert("Please enter a city.");
+    } else {
+      fetch(URL, {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-key": KEY,
+          "x-rapidapi-host": HOST
         }
-      }
-      setForecast(fiveDayForecast);
-    })
-    .catch(exception => {
-      console.error(exception);
-    });
+      })
+      .then(response => response.json())
+      .then(data => {
+        
+        // to format the data structure to be strictly a 5-day forecast, we'll use this "for loop" to divide the 40 "3-hour" record lines by 8. Which will return just 5 days worth of data then.
+        for (let i = 0; i < 40; i += 8) {
+          // We'll then need to append this newly formated data structure to an empty array variable to then later set in state.
+          if (data) {
+            fiveDayForecast.push(data.list[i]);
+          }
+        }
+        setForecast(fiveDayForecast);
+      })
+      .catch(exception => {
+        console.error(exception);
+      });
+    }
   }
 
   function getDay(day) {
@@ -113,7 +122,13 @@ function App() {
 
             <Row>
               <form onSubmit={getForecast}>
-                <input id="city" type="text" name={city} onChange={(e => setCity(e.target.value))} placeholder="Search by City" />
+                <input 
+                  id="city" 
+                  type="text" 
+                  name={city} 
+                  onChange={(e => setCity(e.target.value))} 
+                  placeholder="Search by City" 
+                />
                 <input className="btn" type="submit" value="Search" />
               </form>
             </Row>
