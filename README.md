@@ -2,6 +2,7 @@
 
 Visit live: https://adoring-mcclintock-6017c8.netlify.app/
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2dbef395-3ebe-4c2d-ae76-57bb8c59df7d/deploy-status)](https://app.netlify.com/sites/adoring-mcclintock-6017c8/deploys)
 
 ## To do list
 
