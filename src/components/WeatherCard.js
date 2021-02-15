@@ -16,26 +16,32 @@ export default function WeatherCard({
   windSpeed
 }) {
 
+  function convertTemp(temp) {
+    const farenheit = ( (temp *  9/5) - 459.67 );
+    return farenheit;
+  }
+  const parsedDate = date.split(" ")[0];
+  const farenheit = Math.round(convertTemp(temp));
+  const feelsLikeF = Math.round(convertTemp(feelsLike));
   const iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
   const arrowIcons = {
-
-  }
+    
+  };
 
   return (
     <div className="cards">
       <Card key={id}>
-        <Image src={iconUrl} alt="weather icon" />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
+          <Card.Title>{parsedDate}</Card.Title>
+          <Card.Subtitle>{title}</Card.Subtitle>
+          <Image src={iconUrl} alt="weather icon" />
           <Card.Text>
             {description}
             <br />
-            Temperature: {temp} | Feels like:{feelsLike}
+            {farenheit} F<br />
+            <small>Feels like</small> {feelsLikeF} F
             <br />
-            Wind: {windSpeed} | {windDirection}
-            <br />
-            Date: {date}
+            <small>Wind</small> {windSpeed}mps | {windDirection}
           </Card.Text>
         </Card.Body>
       </Card>
